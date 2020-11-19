@@ -11,7 +11,10 @@ print()
 # 2:
 # Create function that has list of numbers as an input and prints sum of all elements of the list
 def addition(num_list):
-    return sum(num_list)
+    count = 0
+    for num in num_list:
+        count += num
+    return count
 
 print(addition(list(range(10)))) # 45
 
