@@ -27,14 +27,26 @@ print()
 
 # 3:
 #  Transpose following list using both nested loops and list comprehensions
-# a = [[1,2,3],
-#      [4,5,6],
-#      [7,8,9]]
+a = [[1,2,3],
+     [4,5,6],
+     [7,8,9]]
 # To this list:
 # b = [[1,4,7],
 #      [2,5,8],
 #      [3,6,9]]
 
+# List comprehensions:
+b = [[a[j][i] for j, jtem in enumerate(a)] for i, item in enumerate(a)]
+print(b)
+
+# Nested loops:
+c = [[0,0,0], [0,0,0], [0,0,0]]
+for i in range(len(a)):
+    for j in range(len(a)):
+        c[j][i] = a[i][j]
+print(c)
+
+print()
 
 # 4:
 # Create shopping list
@@ -42,15 +54,24 @@ print()
 # ○ If item is found then: ■ Print item, ■ Stop searching
 # ○ If item is not found: ■ Append item to the list
 
-shopping_list = ["potatoes", "apples", "chicken", "soy sauce", "milk", "bananas"]
-new_item = input("New item: ")
-if new_item in shopping_list:
-    print(new_item)
-else:
-    shopping_list.append(new_item)
-    print(shopping_list)
+def new_item(shopping_list):
+    new_item = input("New item: ")
 
-print()
+    already_there = False
+
+    for item in shopping_list:
+        if item == new_item:
+            already_there = True
+            break
+
+    if already_there:
+        return new_item
+    else:
+        shopping_list.append(new_item)
+        return shopping_list
+
+shopping_list = ["potatoes", "apples", "chicken", "soy sauce", "milk", "bananas"]
+print(new_item(shopping_list))
 
 
 # 5:
