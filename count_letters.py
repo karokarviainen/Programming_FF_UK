@@ -1,4 +1,4 @@
-# 3: Write a small Python script count_letters.py using argparse that:
+# 2: Write a small Python script count_letters.py using argparse that:
 # - Has a positional argument of the string in which letters are supposed to be
 # counted.
 # - Has two optional arguments:
